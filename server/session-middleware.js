@@ -1,8 +1,8 @@
 const path = require('path');
 const expressSession = require('express-session');
-const sessionFileStore = require('session-file-store');
+const sessonFileStore = require('session-file-store');
 
-const FileStore = sessionFileStore(expressSession);
+const FileStore = sessonFileStore(expressSession);
 
 const sessionMiddleware = expressSession({
   cookie: {
