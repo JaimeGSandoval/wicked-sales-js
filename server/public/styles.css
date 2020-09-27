@@ -3,6 +3,12 @@ html {
 }
 
 .header p {
+  display: inline-block;
   font-weight: 300;
   font-size: 2.5rem;
+}
+
+.header-dollar-sign {
+  font-size: 2.4rem;
+  font-weight: 400;
 }
