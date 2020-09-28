@@ -1,5 +1,11 @@
 import React from 'react';
 
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2
+});
+
 function ProductListItem(props) {
   return (
     <>
@@ -7,7 +13,7 @@ function ProductListItem(props) {
         <img className="my-card-img-top card-img-top" src={props.products.image} alt="Image of product" />
         <div className="my-card-body card-body">
           <h5 className="my-card-title card-title">{props.products.name}</h5>
-          <p className="price text-secondary">{`$${props.products.price}`}</p>
+          <p className="price text-secondary">{`${formatter.format(props.products.price / 100)}`}</p>
           <p className="my-card-text card-text pb-5">{props.products.shortDescription}</p>
         </div>
       </div>
