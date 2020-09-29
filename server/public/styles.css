@@ -44,6 +44,42 @@ html {
   flex-direction: column;
 }
 
+.product-image-box {
+  width: 100%;
+  height: 100%;
+}
+
+.product-image {
+  object-fit: cover;
+  width: 100%;
+}
+
+.back-to-catalog {
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-top: -1.5rem;
+}
+
+.product-detail-title {
+  font-size: 3.5rem;
+}
+
+.product-price {
+  font-size: 2.5rem;
+}
+
+.product-short-description {
+  font-size: 2.2rem;
+}
+
+.product-long-description {
+  font-size: 2.2rem;
+}
+
+.product-image-row {
+  flex-direction: column;
+}
+
 @media screen and (min-width: 768px) {
   .my-card-img-top {
     height: 30rem;
@@ -52,5 +88,9 @@ html {
   .productList {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .product-image-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
