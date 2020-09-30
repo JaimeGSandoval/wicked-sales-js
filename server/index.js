@@ -64,12 +64,23 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 app.get('/api/cart', (req, res, next) => {
 
-  const sql = `
-    select *
-      from "carts"
-  `;
+  if (!req.session.cartId) {
+    return [];
+  }
 
-  db.query(sql)
+  const sql = `
+          select "c"."cartItemId",
+       "c"."price",
+       "p"."productId",
+       "p"."image",
+       "p"."name",
+       "p"."shortDescription"
+  from "cartItems" as "c"
+  join "products" as "p" using ("productId")
+ where "c"."cartId" = $1
+  `;
+  const params = [req.session.cartId];
+  db.query(sql, params)
     .then(result => {
       const cart = result.rows;
       res.json(cart);
