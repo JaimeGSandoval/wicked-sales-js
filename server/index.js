@@ -77,6 +77,40 @@ app.get('/api/cart', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/cart', (req, res, next) => {
+
+  const productId = Number(req.body.productId);
+  if (!Number.isInteger(productId) || productId <= 0) {
+    return res.status(400).json({
+      error: '"productId" must be a positive integer'
+    });
+  }
+
+  const sql = 'SELECT "price" FROM "products" WHERE "productId" = $1';
+  const params = [productId];
+
+  db.query(sql, params)
+
+    .then(priceResult => {
+      if (priceResult.rows.length === 0) {
+        throw new ClientError('There are no rows of recorded data yet', 400);
+      }
+      const insertCartSql = 'INSERT INTO "carts" ("cartId", "createdAt") VALUES (default, default) returning "cartId"';
+      return db.query(insertCartSql)
+        .then(cartResult => {
+          const cartObj = {
+            cartId: cartResult.rows[0].cartId,
+            price: priceResult.rows[0].price
+          };
+          return cartObj;
+        });
+    })
+    .then(data => {
+      return data;
+    })
+    .catch(err => next(err));
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
