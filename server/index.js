@@ -63,22 +63,22 @@ app.get('/api/products/:productId', (req, res, next) => {
 });
 
 app.get('/api/cart', (req, res, next) => {
-
   if (!req.session.cartId) {
-    return [];
+    res.json([]);
+    return;
   }
 
   const sql = `
-          select "c"."cartItemId",
-       "c"."price",
-       "p"."productId",
-       "p"."image",
-       "p"."name",
-       "p"."shortDescription"
-  from "cartItems" as "c"
-  join "products" as "p" using ("productId")
- where "c"."cartId" = $1
-  `;
+            select "c"."cartItemId",
+         "c"."price",
+         "p"."productId",
+         "p"."image",
+         "p"."name",
+         "p"."shortDescription"
+    from "cartItems" as "c"
+    join "products" as "p" using ("productId")
+   where "c"."cartId" = $1
+    `;
   const params = [req.session.cartId];
   db.query(sql, params)
     .then(result => {
@@ -86,7 +86,8 @@ app.get('/api/cart', (req, res, next) => {
       res.json(cart);
     })
     .catch(err => next(err));
-});
+}
+);
 
 app.post('/api/cart', (req, res, next) => {
 
