@@ -106,7 +106,30 @@ app.post('/api/cart', (req, res, next) => {
         });
     })
     .then(data => {
-      return data;
+      req.session.cartId = data.cartId;
+      const insertRow = 'INSERT INTO "cartItems" ("cartId", "productId", "price") VALUES($1, $2, $3) RETURNING "cartItemId"';
+      const params = [data.cartId, productId, data.price];
+      return db.query(insertRow, params)
+        .then(insertResult => {
+          return insertResult.rows[0].cartItemId;
+        });
+    })
+    .then(cartItemIdResult => {
+      const cartItem =
+        `select "c"."cartItemId",
+      "c"."price",
+      "p"."productId",
+      "p"."image",
+      "p"."name",
+      "p"."shortDescription"
+      from "cartItems" as "c"
+      join "products" as "p" using("productId")
+      where "c"."cartItemId" = $1`;
+      const params = [cartItemIdResult];
+      db.query(cartItem, params)
+        .then(data => {
+          res.status(201).json(data.rows[0]);
+        });
     })
     .catch(err => next(err));
 });
