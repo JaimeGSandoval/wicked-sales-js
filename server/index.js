@@ -79,6 +79,7 @@ app.get('/api/cart', (req, res, next) => {
     join "products" as "p" using ("productId")
    where "c"."cartId" = $1
     `;
+
   const params = [req.session.cartId];
   db.query(sql, params)
     .then(result => {
@@ -102,12 +103,17 @@ app.post('/api/cart', (req, res, next) => {
   const params = [productId];
 
   db.query(sql, params)
-
     .then(priceResult => {
       if (priceResult.rows.length === 0) {
         throw new ClientError('There are no rows of recorded data yet', 400);
       }
-      const insertCartSql = 'INSERT INTO "carts" ("cartId", "createdAt") VALUES (default, default) returning "cartId"';
+      let insertCartSql = null;
+      if (!req.session.cartId) {
+        insertCartSql = 'INSERT INTO "carts" ("cartId", "createdAt") VALUES (default, default) returning "cartId"';
+      } else {
+        // insertCartSql = req.session.cartId;
+        insertCartSql = 'SELECT * FROM "carts" WHERE "cartId" = "req.session.cartId"';
+      }
       return db.query(insertCartSql)
         .then(cartResult => {
           const cartObj = {
