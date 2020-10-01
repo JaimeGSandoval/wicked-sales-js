@@ -104,20 +104,25 @@ app.post('/api/cart', (req, res, next) => {
 
   db.query(sql, params)
     .then(priceResult => {
+
       if (priceResult.rows.length === 0) {
         throw new ClientError('There are no rows of recorded data yet', 400);
       }
-      let insertCartSql = null;
+
+      let insertCartSql;
+      let params;
+
       if (!req.session.cartId) {
         insertCartSql = 'INSERT INTO "carts" ("cartId", "createdAt") VALUES (default, default) returning "cartId"';
       } else {
-        // insertCartSql = req.session.cartId;
-        insertCartSql = 'SELECT * FROM "carts" WHERE "cartId" = "req.session.cartId"';
+        insertCartSql = 'SELECT * FROM "carts" WHERE "cartId" = $1';
+        params = req.session.cartId;
       }
-      return db.query(insertCartSql)
+
+      return db.query(insertCartSql, params)
         .then(cartResult => {
           const cartObj = {
-            cartId: cartResult.rows[0].cartId,
+            cartId: params,
             price: priceResult.rows[0].price
           };
           return cartObj;
