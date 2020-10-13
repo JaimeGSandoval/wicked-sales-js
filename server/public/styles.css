@@ -118,6 +118,25 @@ html {
   font-size: 1.5rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+  z-index: 2;
+}
+
+.form-input {
+  height: 3.5rem;
+}
+
+.form-label {
+  font-size: 1.8rem;
+}
+
+.form-textarea {
+  height: 10rem;
+  border: 1px solid #ced4da;
+  resize: none;
+}
+
+.custom-form-btn-margin {
+  top: 5.6rem;
 }
 
 @media screen and (min-width: 768px) {
