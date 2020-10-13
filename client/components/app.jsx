@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
+import CartSummary from './cart-summary';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -66,21 +67,45 @@ export default class App extends React.Component {
 
   render() {
     let component = null;
+
     if (this.state.view.name === 'catalog') {
       component = <ProductList setView={this.setView} />;
-    } else {
-      component = <ProductDetails addToCart={this.addToCart} viewParams={this.state.view.params} setView={this.setView} />;
-    }
-    return (
-      <>
-        <Header cartItemCount={this.state.cart.length} />
-        <div className="container col-sm-12 col-md-12 my-5">
-          <div className="row productList justify-content-center">
-            {component}
+      return (
+        <>
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />
+          <div className="container col-sm-12 col-md-12 my-5">
+            <div className="row productList justify-content-center">
+              {component}
+            </div>
           </div>
-        </div>
-      </>
-    );
+        </>
+      );
 
+    } else if (this.state.view.name === 'details') {
+      component = <ProductDetails addToCart={this.addToCart} viewParams={this.state.view.params} setView={this.setView} />;
+      return (
+        <>
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />,
+          <div className="container col-sm-12 col-md-12 my-5">
+            <div className="row productList justify-content-center">
+              {component}
+            </div>
+          </div>;
+        </>
+      );
+
+    } else if (this.state.view.name === 'cart') {
+      component = <CartSummary cartItems={this.state.cart} setView={this.setView} />;
+      return (
+        <>
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />
+          <div className="container col-sm-12 col-md-12 my-5">
+            <div className="row productList justify-content-start ml-4">
+              {component}
+            </div>
+          </div>
+        </>
+      );
+    }
   }
 }

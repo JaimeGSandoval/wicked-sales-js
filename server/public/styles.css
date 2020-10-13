@@ -80,6 +80,14 @@ html {
   flex-direction: column;
 }
 
+.cart-short-description {
+  font-size: 1.6rem;
+}
+
+.cart-title {
+  font-size: 2.4rem;
+}
+
 .fa-shopping-cart {
   font-size: 2.5rem;
 }
@@ -91,6 +99,18 @@ html {
 
 .add-to-btn {
   font-size: 1.8rem;
+}
+
+.my-cart-text {
+  font-size: 3rem;
+}
+
+.custom-catalog-width {
+  width: 13%;
+}
+
+.no-items-text {
+  right: 10%;
 }
 
 @media screen and (min-width: 768px) {
