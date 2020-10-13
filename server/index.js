@@ -91,7 +91,6 @@ app.get('/api/cart', (req, res, next) => {
 );
 
 app.post('/api/cart', (req, res, next) => {
-
   const productId = Number(req.body.productId);
   if (!Number.isInteger(productId) || productId <= 0) {
     return res.status(400).json({
@@ -151,6 +150,31 @@ app.post('/api/cart', (req, res, next) => {
         });
     })
     .catch(err => next(err));
+});
+
+app.post('/api/orders', (req, res, next) => {
+  if (!req.session.cartId) {
+    throw (new ClientError('CartId is not valid', 400));
+  }
+
+  if (!req.body.name || !req.body.creditCard || !req.body.shippingAddress) {
+    throw (new ClientError('Name, Credit Card and Shipping Address are required', 400));
+  }
+
+  const sql = `
+               insert into "orders"("cartId", "name", "creditCard", "shippingAddress")
+               values($1, $2, $3, $4)
+               returning "orderId", "createdAt", "name", "creditCard", "shippingAddress";
+               `;
+  const params = [req.session.cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
+
+  db.query(sql, params)
+    .then(result => {
+      if (result) {
+        delete req.session.cartId;
+      }
+      return res.status(201).json(result.rows[0]);
+    });
 });
 
 app.use('/api', (req, res, next) => {
