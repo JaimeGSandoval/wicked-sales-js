@@ -2,22 +2,17 @@ import React from 'react';
 import formatter from './price-formatter';
 
 function CartSummaryItem(props) {
-  // const priceNum = JSON.stringify(props.price);
-  // const priceArr = priceNum.split('');
-  // priceArr.splice((priceArr.length - 2), 0, '.');
-  // const price = priceArr.join('');
-
   const price = `${formatter.format(props.price / 100)}`;
 
   return (
     <div className="row border mb-4 bg-white p-3">
-      <div className="col-4 d-flex justify-content-center">
-        <img className="cart-summary-img" src={props.image} alt={props.name} />
+      <div className="col-5">
+        <img className="cart-summary-img product-image" src={props.image} alt={props.name} />
       </div>
-      <div className="col-8 d-flex flex-column justify-content-center">
-        <h2 className="mb-3">{props.name}</h2>
+      <div className="d-flex flex-column col justify-content-center ml-2">
+        <h2 className="mb-3 cart-title">{props.name}</h2>
         <h4 className="mb-3">{price}</h4>
-        <p>{props.shortDesc}</p>
+        <p className="cart-short-description">{props.shortDesc}</p>
       </div>
     </div>
   );

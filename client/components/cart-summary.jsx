@@ -11,6 +11,22 @@ function TotalPrice(props) {
 
 function CartSummary(props) {
 
+  if (props.cartItems.length === 0) {
+    return (
+      <>
+        <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center border border-secondary custom-catalog-width ml-5" onClick={() => props.setView('catalog', {})}>
+          <i className="fas fa-chevron-left mr-2"></i>
+          <a>Back to catalog</a>
+        </div>
+        <div className=" text-center">
+
+        </div>
+        <h1 className="mt-4 m-auto position-relative no-items-text" >No items have been added to the cart.</h1 >;
+
+      </>
+    );
+  }
+
   const cartItems = props.cartItems.map(cartItem =>
 
     <CartSummaryItem
@@ -23,11 +39,12 @@ function CartSummary(props) {
       shortDesc={cartItem.shortDescription}
     />
   );
+
   return (
-    < div className="container" >
+    < div className="container">
       <div className="row">
         <div className="col my-4">
-          <div className="back-arrow" onClick={() => props.setView('catalog', {})}>
+          <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center border border-secondary col-6 col-md-2" onClick={() => props.setView('catalog', {})}>
             <i className="fas fa-chevron-left mr-2"></i>
             <a>Back to catalog</a>
           </div>
@@ -51,4 +68,5 @@ function CartSummary(props) {
     </div >
   );
 }
+
 export default CartSummary;
