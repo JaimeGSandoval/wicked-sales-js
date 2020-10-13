@@ -3,6 +3,7 @@ import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
+import CheckoutForm from './checkout-form';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -65,6 +66,29 @@ export default class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  placeOrder(order) {
+    const req = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    };
+
+    fetch('/api/orders', req)
+      .then(response => response.json())
+      .then(orderData => {
+        this.setState({
+          cart: [],
+          view: {
+            name: 'catalog',
+            params: {}
+          }
+        });
+      })
+      .catch(err => console.error(err));
+  }
+
   render() {
     let component = null;
 
@@ -101,6 +125,20 @@ export default class App extends React.Component {
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <div className="container col-sm-12 col-md-12 my-5">
             <div className="row productList justify-content-start ml-4">
+              {component}
+            </div>
+          </div>
+        </>
+      );
+    } else if (this.state.view.name === 'checkout') {
+
+      component = <CheckoutForm setView={this.setView} cartItems={this.state.cart} />;
+
+      return (
+        <>
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />
+          <div className="container col-10 my-5">
+            <div className="row">
               {component}
             </div>
           </div>

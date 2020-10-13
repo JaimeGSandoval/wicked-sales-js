@@ -1,6 +1,7 @@
 import React from 'react';
 import CartSummaryItem from './cart-summary-item';
 import formatter from './price-formatter';
+
 function TotalPrice(props) {
   let total = 0;
   for (let i = 0; i < props.cart.length; i++) {
@@ -58,10 +59,12 @@ function CartSummary(props) {
         <h2 className="col-6 pl-0">
           Total Price:
           <span className="ml-3">
-            <TotalPrice cart={props.cartItems} />
+            <div>
+              <TotalPrice cart={props.cartItems} />
+            </div>
           </span>
         </h2>
-        <div className="col-6 d-flex justify-content-end pr-0">
+        <div className="col-6 d-flex justify-content-end pr-0 align-items-center">
           <button className="btn btn-lg btn-primary" onClick={() => props.setView('checkout', {})}>Checkout</button>
         </div>
       </div>
