@@ -2,16 +2,30 @@ html {
   font-size: 62.5%;
 }
 
+/* font-family: 'Lato', sans-serif; */
+
+body {
+  background-color: #9c9082;
+}
+
+header {
+  background-color: #0f532e;
+}
+
 .header p {
   display: inline-block;
   font-weight: 300;
   font-size: 2.5rem;
 }
+header .nav-title {
+  font-family: "Rozha One", serif;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  font-size: 3.5rem;
+}
 
-.header-dollar-sign {
-  font-size: 1.8rem;
-  position: relative;
-  bottom: 0.2rem;
+.bonsai-icon {
+  border-radius: 50%;
 }
 
 .my-card {
