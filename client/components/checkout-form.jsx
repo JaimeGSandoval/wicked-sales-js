@@ -39,37 +39,37 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <>
-        <div className="row mb-3 flex-column">
-          <h1>My Cart</h1>
-          <h2 className="mt-3 text-secondary">
-            <span>Order Total: <TotalPrice cart={this.props.cartItems} className="d-inline" /> </span>
-          </h2>
-        </div>
         <div className="row col-12">
+          <div className="row mb-3 flex-column ml-4">
+            <h1>My Cart</h1>
+            <h2 className="mt-5 mb-3 text-white">
+              <span>Order Total: <TotalPrice cart={this.props.cartItems} className="d-inline" /> </span>
+            </h2>
+          </div>
           <form className="col-12" onSubmit={this.handleSubmit}>
 
             <div className="form-group">
-              <label className="form-label" htmlFor="name">Name</label>
+              <label className="form-label text-white" htmlFor="name">Name</label>
               <input value={this.state.name} onChange={this.handleChange} type="text" className="form-control form-input" id="name" required />
             </div>
 
             <div className="form-group">
-              <label className="form-label" htmlFor="credit-card">Credit Card</label>
+              <label className="form-label text-white" htmlFor="credit-card">Credit Card</label>
               <input value={this.state.creditCard} onChange={this.handleChange} type="text" className="form-control form-input" id="creditCard" required />
             </div>
 
-            <label className="form-label" htmlFor="shipping-address">Shipping Address</label>
+            <label className="form-label text-white" htmlFor="shipping-address">Shipping Address</label>
             <textarea value={this.state.shippingAddress} onChange={this.handleChange} className="col-12 form-textarea" id="shippingAddress" rows="3" required></textarea>
 
             <div className="d-flex justify-content-end custom-form-btn-margin position-relative">
-              <button type="submit" className="order-btn btn-primary">Place Order</button>
+              <button type="submit" className="order-btn checkout-button px-4 py-3">Place Order</button>
             </div>
           </form>
 
         </div>
         <div className="row my-5 col-12">
           <div className="container d-flex justify-content-between">
-            <div onClick={() => this.props.setView('catalog', {})} className="back-to-catalog py-2 px-3 mb-5 align-middle text-center border border-secondary">
+            <div onClick={() => this.props.setView('catalog', {})} className="back-to-catalog py-2 px-3 mb-5 align-middle text-center">
               <i className="fas fa-chevron-left mr-2"></i>
               <a>Continue Shopping</a>
             </div>

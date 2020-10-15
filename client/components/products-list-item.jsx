@@ -9,7 +9,7 @@ function ProductListItem(props) {
         <div className="my-card-body card-body">
           <h5 className="my-card-title card-title">{props.product.name}</h5>
           <p className="price text-secondary">{`${formatter.format(props.product.price / 100)}`}</p>
-          <p className="my-card-text card-text pb-5">{props.product.shortDescription}</p>
+          <p className="my-card-text card-text">{props.product.shortDescription}</p>
         </div>
       </div>
     </>

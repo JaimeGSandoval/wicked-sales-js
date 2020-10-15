@@ -27,15 +27,15 @@ class ProductDetails extends React.Component {
     }
     return (
       <>
-        <div className="container">
-          <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center text-white col-6 col-md-2" onClick={() => this.props.setView('catalog', {})}>Back to Catalog</div>
-          <div className="row product-image-row">
-            <div className="product-image-box mb-5 col-md-6">
+        <div className="container col-lg-10">
+          <div className="back-to-catalog p-1 text-center align-items-start col-6 col-md-2" onClick={() => this.props.setView('catalog', {})}>Back to Catalog</div>
+          <div className="row product-image-row bg-white">
+            <div className="product-image-boxcol">
               <img className="product-image" src={this.state.product.image} alt="Image of product" />
 
             </div>
 
-            <div className="product-short-detail-box col-md-6 text-white">
+            <div className="product-short-detail-box col-md-6">
               <p className="product-detail-title">{this.state.product.name}</p>
               <p className="product-price text-white">{`${formatter.format(this.state.product.price / 100)}`}</p>
               <p className="product-short-description mb-5">{this.state.product.shortDescription}</p>
@@ -43,7 +43,7 @@ class ProductDetails extends React.Component {
             </div>
           </div>
 
-          <p className="row product-long-description px-3 text-white">{this.state.product.longDescription}</p>
+          <p className="row product-long-description bg-white">{this.state.product.longDescription}</p>
 
         </div>
       </>

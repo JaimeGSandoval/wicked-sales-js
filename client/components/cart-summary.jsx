@@ -15,14 +15,14 @@ function CartSummary(props) {
   if (props.cartItems.length === 0) {
     return (
       <>
-        <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center border border-secondary custom-catalog-width ml-5" onClick={() => props.setView('catalog', {})}>
+        <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center custom-catalog-width ml-5" onClick={() => props.setView('catalog', {})}>
           <i className="fas fa-chevron-left mr-2"></i>
           <a>Back to catalog</a>
         </div>
         <div className=" text-center">
 
         </div>
-        <h1 className="mt-4 m-auto position-relative no-items-text" >No items have been added to the cart.</h1 >;
+        <h1 className="mt-4 m-auto position-relative no-items-text text-white" >No items have been added to the cart.</h1 >;
 
       </>
     );
@@ -45,18 +45,18 @@ function CartSummary(props) {
     < div className="container">
       <div className="row">
         <div className="col my-4">
-          <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center border border-secondary col-6 col-md-2" onClick={() => props.setView('catalog', {})}>
+          <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center col-6 col-md-2" onClick={() => props.setView('catalog', {})}>
             <i className="fas fa-chevron-left mr-2"></i>
             <a>Back to catalog</a>
           </div>
         </div>
       </div>
       <div className="row mb-3">
-        <h1 className="col">My Cart</h1>
+        <h1 className="col text-white">My Cart</h1>
       </div>
       { cartItems}
       <div className="row my-5">
-        <h2 className="col-6 pl-0">
+        <h2 className="col-6 pl-0 text-white checkout-price">
           Total Price:
           <span className="ml-3">
             <div>
@@ -65,7 +65,7 @@ function CartSummary(props) {
           </span>
         </h2>
         <div className="col-6 d-flex justify-content-end pr-0 align-items-center">
-          <button className="btn btn-lg btn-primary" onClick={() => { props.setView('checkout', {}); }}>Checkout</button>
+          <button className="btn btn-lg checkout-button py-3 px-4" onClick={() => { props.setView('checkout', {}); }}>Checkout</button>
         </div>
       </div>
     </div >

@@ -11,7 +11,7 @@ function CartSummaryItem(props) {
       </div>
       <div className="d-flex flex-column col justify-content-center ml-2">
         <h2 className="mb-3 cart-title">{props.name}</h2>
-        <h4 className="mb-3">{price}</h4>
+        <h4 className="text-secondary font-weight-bold checkout-price mb-4 mt-3">{price}</h4>
         <p className="cart-short-description">{props.shortDesc}</p>
       </div>
     </div>
