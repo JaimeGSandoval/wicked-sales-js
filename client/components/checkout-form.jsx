@@ -43,7 +43,7 @@ class CheckoutForm extends React.Component {
           <div className="row flex-column ml-4">
             <h1 className="mb-4">My Cart</h1>
             <h2 className="mb-4">
-              <span>Order Total: <TotalPrice cart={this.props.cartItems} className="d-inline" /> </span>
+              <span className="checkout-form-price">Order Total: <TotalPrice cart={this.props.cartItems} className="d-inline" /> </span>
             </h2>
           </div>
           <form className="col-12" onSubmit={this.handleSubmit}>
@@ -69,7 +69,7 @@ class CheckoutForm extends React.Component {
         </div>
         <div className="row col-12">
           <div className="container d-flex justify-content-between">
-            <div onClick={() => this.props.setView('catalog', {})} className="back-to-catalog py-2 px-3 mb-5 align-middle text-center">
+            <div onClick={() => this.props.setView('catalog', {})} className="back-to-catalog py-3 px-4 mb-5 align-middle text-center custom-catalog-width-checkout">
               <i className="fas fa-chevron-left mr-2"></i>
               <a>Continue Shopping</a>
             </div>

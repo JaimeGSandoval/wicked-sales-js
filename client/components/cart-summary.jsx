@@ -23,7 +23,7 @@ function CartSummary(props) {
         <div className=" text-center">
 
         </div>
-        <h1 className="mt-4 m-auto position-relative no-items-text text-white" >No items have been added to the cart.</h1 >;
+        <h1 className="mt-4 m-auto position-relative no-items-text px-2" >No items have been added to the cart.</h1 >;
 
       </>
     );
@@ -47,18 +47,18 @@ function CartSummary(props) {
       <div className="row">
         {/* my-4  */}
         <div className="col">
-          <div className="back-to-catalog p-1 pb-2 mb-5 mt-2 align-middle text-center col-6 col-md-2" onClick={() => props.setView('catalog', {})}>
+          <div className="back-to-catalog py-3 px-4 mb-5 align-middle text-center" onClick={() => props.setView('catalog', {})}>
             <i className="fas fa-chevron-left mr-2"></i>
             <a>Back to catalog</a>
           </div>
         </div>
       </div>
       <div className="row mb-3">
-        <h1 className="col">My Cart</h1>
+        <h1 className="col my-cart-text">My Cart</h1>
       </div>
       { cartItems}
       <div className="row my-5">
-        <h2 className="col-6 pl-0 text-secondary custom-margin-left-price">
+        <h2 className="col-6 pl-0 custom-margin-left-price">
           Total Price:
           <span className="ml-3">
             <div>

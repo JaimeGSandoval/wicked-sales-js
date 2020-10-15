@@ -5,6 +5,7 @@ html {
 body {
   background-color: #fff;
   font-family: "Lato", sans-serif;
+  color: #333;
 }
 
 header {
@@ -168,18 +169,10 @@ header .nav-title {
   font-size: 3rem;
 }
 
-.checkout-cart {
+/* .checkout-cart {
   transition: 0.5s ease;
   border: 2px solid transparent;
-}
-
-.checkout-cart:hover {
-  border: 2px solid #fff;
-}
-
-.custom-catalog-width {
-  width: 13%;
-}
+} */
 
 .back-to-catalog {
   transition: 0.5s ease;
@@ -189,16 +182,13 @@ header .nav-title {
   cursor: pointer;
   color: #0f532e;
   margin: -1.5rem auto 3rem auto;
+  border-radius: 2.5rem;
 }
 
 .back-to-catalog:hover {
   border-color: #0f532e;
   background-color: #fff;
   color: #0f532e;
-}
-
-.no-items-text {
-  right: 10%;
 }
 
 .form-input {
@@ -235,6 +225,24 @@ header .nav-title {
 }
 
 @media screen and (min-width: 768px) {
+  .form-label {
+    color: #fff;
+  }
+
+  .checkout-form-price {
+    color: #fff;
+  }
+  .my-cart-text {
+    color: #fff;
+  }
+  .custom-catalog-width {
+    width: 13%;
+  }
+
+  .no-items-text {
+    right: 3%;
+    color: #fff;
+  }
   .product-detail-title {
     margin-bottom: 6%;
     font-size: 3.5rem;
@@ -245,10 +253,11 @@ header .nav-title {
   .back-to-catalog {
     border-color: #fff;
     color: #fff;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
+    /* flex: 0 0 33.333333%;
+    max-width: 33.333333%; */
     margin-top: 3.5rem;
     margin-bottom: 3.7rem;
+    width: 19rem;
   }
   body {
     background-color: #69625a;
@@ -294,6 +303,21 @@ header .nav-title {
   .add-to-btn,
   .product-short-description {
     margin-bottom: 13%;
+  }
+
+  .custom-margin-left-price {
+    color: #fff;
+  }
+
+  .order-btn {
+    top: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 22rem;
+  }
+
+  .custom-catalog-width-checkout {
+    width: 22rem;
   }
 }
 
