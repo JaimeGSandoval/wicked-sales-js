@@ -96,7 +96,6 @@ header .nav-title {
 }
 
 .product-short-detail-box {
-  /* align-items: center; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,11 +167,6 @@ header .nav-title {
 .my-cart-text {
   font-size: 3rem;
 }
-
-/* .checkout-cart {
-  transition: 0.5s ease;
-  border: 2px solid transparent;
-} */
 
 .back-to-catalog {
   transition: 0.5s ease;
@@ -253,8 +247,6 @@ header .nav-title {
   .back-to-catalog {
     border-color: #fff;
     color: #fff;
-    /* flex: 0 0 33.333333%;
-    max-width: 33.333333%; */
     margin-top: 3.5rem;
     margin-bottom: 3.7rem;
     width: 19rem;

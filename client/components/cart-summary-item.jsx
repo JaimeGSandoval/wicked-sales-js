@@ -6,7 +6,6 @@ function CartSummaryItem(props) {
 
   return (
     <div className="row border mb-4 bg-white p-3">
-      {/* col-5 */}
       <div className="col-sm-12 col-md-6">
         <img className="cart-summary-img product-image" src={props.image} alt={props.name} />
       </div>

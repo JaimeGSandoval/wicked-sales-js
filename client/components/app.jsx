@@ -21,6 +21,7 @@ export default class App extends React.Component {
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.userAlert = this.userAlert.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,10 @@ export default class App extends React.Component {
       .catch(err => this.setState({ message: err.message }))
       .finally(() => this.setState({ isLoading: false }));
     this.getCartItems();
+  }
+
+  userAlert() {
+    alert('Please do not enter personal information when filling out the form. Thank You.');
   }
 
   setView(name, params) {
@@ -124,7 +129,6 @@ export default class App extends React.Component {
         <>
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <div className="container col-sm-12 col-md-12 my-5">
-            {/* ml-4 */}
             <div className="row productList justify-content-start ">
               {component}
             </div>
@@ -132,7 +136,7 @@ export default class App extends React.Component {
         </>
       );
     } else if (this.state.view.name === 'checkout') {
-
+      this.userAlert();
       component = <CheckoutForm setView={this.setView} cartItems={this.state.cart} placeOrder={this.placeOrder} />;
 
       return (

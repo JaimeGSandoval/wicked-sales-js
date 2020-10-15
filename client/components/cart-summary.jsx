@@ -15,7 +15,6 @@ function CartSummary(props) {
   if (props.cartItems.length === 0) {
     return (
       <>
-        {/* ml-5 */}
         <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center custom-catalog-width" onClick={() => props.setView('catalog', {})}>
           <i className="fas fa-chevron-left mr-2"></i>
           <a>Back to catalog</a>
@@ -45,7 +44,6 @@ function CartSummary(props) {
   return (
     < div className="container">
       <div className="row">
-        {/* my-4  */}
         <div className="col">
           <div className="back-to-catalog py-3 px-4 mb-5 align-middle text-center" onClick={() => props.setView('catalog', {})}>
             <i className="fas fa-chevron-left mr-2"></i>
@@ -66,7 +64,6 @@ function CartSummary(props) {
             </div>
           </span>
         </h2>
-        {/* col-6 */}
         <div className="col d-flex justify-content-end pr-0 align-items-center">
           <button className="btn btn-lg checkout-button py-3 px-4" onClick={() => { props.setView('checkout', {}); }}>Checkout</button>
         </div>

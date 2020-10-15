@@ -76,6 +76,7 @@ class CheckoutForm extends React.Component {
           </div>
         </div>
       </>
+
     );
   }
 }
