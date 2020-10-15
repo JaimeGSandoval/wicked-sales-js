@@ -6,11 +6,12 @@ function CartSummaryItem(props) {
 
   return (
     <div className="row border mb-4 bg-white p-3">
-      <div className="col-5">
+      {/* col-5 */}
+      <div className="col-sm-12">
         <img className="cart-summary-img product-image" src={props.image} alt={props.name} />
       </div>
       <div className="d-flex flex-column col justify-content-center ml-2">
-        <h2 className="mb-3 cart-title">{props.name}</h2>
+        <h2 className="my-3 cart-title">{props.name}</h2>
         <h4 className="text-secondary font-weight-bold checkout-price mb-4 mt-3">{price}</h4>
         <p className="cart-short-description">{props.shortDesc}</p>
       </div>

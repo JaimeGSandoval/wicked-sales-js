@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: #69625a;
+  background-color: #fff;
   font-family: "Lato", sans-serif;
 }
 
@@ -22,9 +22,9 @@ button:focus {
 }
 header .nav-title {
   font-family: "Rozha One", serif;
-  letter-spacing: 1px;
   margin-bottom: 0;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  margin-left: 1rem;
 }
 
 .bonsai-icon {
@@ -35,6 +35,8 @@ header .nav-title {
   box-shadow: 2px 2px 4px #333;
   cursor: pointer;
   transition: 0.5s ease;
+  margin: auto;
+  width: 94%;
 }
 
 .my-card:hover {
@@ -42,14 +44,12 @@ header .nav-title {
 }
 
 .my-card h5 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.5rem;
 }
 
 .my-card-text {
-  font-size: 1.6rem;
-  color: #333;
-  font-weight: 600;
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
 }
 
 .price {
@@ -81,19 +81,9 @@ header .nav-title {
   object-fit: cover;
   width: 100%;
 }
-/*
-.back-to-catalog {
-  font-size: 1.8rem;
-  cursor: pointer;
-  margin-top: -1.5rem;
-  color: #fff;
-  border: 2px solid #fff;
-  margin-top: 1.5rem;
-  margin-bottom: 6rem;
-} */
 
 .product-detail-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
 }
 
 .product-price {
@@ -105,8 +95,7 @@ header .nav-title {
 }
 
 .product-short-detail-box {
-  margin-left: 2rem;
-  align-items: center;
+  /* align-items: center; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,7 +119,7 @@ header .nav-title {
 }
 
 .cart-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #333;
 }
 
@@ -145,6 +134,8 @@ header .nav-title {
 .cart-box {
   font-size: 1.7rem;
   cursor: pointer;
+  position: relative;
+  margin-left: 2%;
 }
 
 .add-to-btn,
@@ -156,6 +147,14 @@ header .nav-title {
   border-radius: 2.5rem;
   border: 2px solid transparent;
   z-index: 3;
+}
+
+.checkout-button {
+  margin-right: 8%;
+}
+
+.custom-margin-left-price {
+  margin-left: 4%;
 }
 
 .add-to-btn:hover,
@@ -185,14 +184,11 @@ header .nav-title {
 .back-to-catalog {
   transition: 0.5s ease;
   flex-direction: column;
-  border: 2px solid #fff;
+  border: 2px solid #0f532e;
   font-size: 1.8rem;
   cursor: pointer;
-  margin-top: -1.5rem;
-  color: #fff;
-  border: 2px solid #fff;
-  margin-top: 1.5rem;
-  margin-bottom: 6rem;
+  color: #0f532e;
+  margin: -1.5rem auto 3rem auto;
 }
 
 .back-to-catalog:hover {
@@ -212,6 +208,7 @@ header .nav-title {
 
 .form-label {
   font-size: 1.8rem;
+  color: #333;
 }
 
 .form-textarea {
@@ -222,10 +219,52 @@ header .nav-title {
 }
 
 .custom-form-btn-margin {
-  top: 5.6rem;
+  justify-content: center;
+}
+
+.order-btn {
+  top: 11rem;
+  font-size: 1.8rem;
+  background-color: #0f532e;
+  color: #fff;
+  transition: 0.5s ease;
+  border-radius: 2.5rem;
+  border: 2px solid transparent;
+  z-index: 3;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
+  .product-detail-title {
+    margin-bottom: 6%;
+    font-size: 3.5rem;
+  }
+  .product-image-box {
+    margin-top: 5%;
+  }
+  .back-to-catalog {
+    border-color: #fff;
+    color: #fff;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-top: 3.5rem;
+    margin-bottom: 3.7rem;
+  }
+  body {
+    background-color: #69625a;
+  }
+  .product-short-detail-box {
+    margin-left: 2rem;
+    margin-top: 4%;
+    align-items: start;
+  }
+  .cart-box {
+    left: 0;
+  }
+  header .nav-title {
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+  }
   .my-card-img-top {
     height: 30rem;
     margin-top: 2rem;
@@ -250,5 +289,32 @@ header .nav-title {
 
   .productList {
     margin-top: 7%;
+  }
+
+  .add-to-btn,
+  .product-short-description {
+    margin-bottom: 13%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  header .nav-title {
+    letter-spacing: 1px;
+    font-size: 4.5rem;
+  }
+
+  .cart-box {
+    font-size: 2.7rem;
+  }
+
+  .fa-shopping-cart {
+    font-size: 2.8rem;
+  }
+
+  .back-to-catalog {
+    flex: 0 0 20%;
+    max-width: 20%;
+    margin-bottom: 4%;
+    margin-top: 1%;
   }
 }

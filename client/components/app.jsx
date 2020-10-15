@@ -124,7 +124,8 @@ export default class App extends React.Component {
         <>
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <div className="container col-sm-12 col-md-12 my-5">
-            <div className="row productList justify-content-start ml-4">
+            {/* ml-4 */}
+            <div className="row productList justify-content-start ">
               {component}
             </div>
           </div>

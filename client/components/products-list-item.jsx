@@ -4,7 +4,10 @@ import formatter from './price-formatter';
 function ProductListItem(props) {
   return (
     <>
-      <div className="my-card card col-lg-3 my-3 mr-md-5 my-md-5" onClick={() => props.setView('details', { productId: props.product.productId })}>
+      {/* col-md-5  */}
+      {/* mr-lg-5 */}
+      {/* mr-md-5 */}
+      <div className="my-card card mx-md-5 col-lg-3 my-3 my-md-5" onClick={() => props.setView('details', { productId: props.product.productId })}>
         <img className="my-card-img-top card-img-top" src={props.product.image} alt="Image of product" />
         <div className="my-card-body card-body">
           <h5 className="my-card-title card-title">{props.product.name}</h5>
