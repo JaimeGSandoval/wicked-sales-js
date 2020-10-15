@@ -2,10 +2,9 @@ html {
   font-size: 62.5%;
 }
 
-/* font-family: 'Lato', sans-serif; */
-
 body {
   background-color: #9c9082;
+  font-family: "Lato", sans-serif;
 }
 
 header {
@@ -22,6 +21,7 @@ header .nav-title {
   letter-spacing: 1px;
   margin-bottom: 0;
   font-size: 3.5rem;
+  cursor: pointer;
 }
 
 .bonsai-icon {
@@ -39,7 +39,7 @@ header .nav-title {
 
 .my-card-text {
   font-size: 1.6rem;
-  color: #000;
+  color: #333;
   font-weight: 600;
 }
 
@@ -52,6 +52,10 @@ header .nav-title {
   background-size: contain;
   height: 22rem;
   object-fit: contain;
+}
+
+.my-card-title {
+  color: #333;
 }
 
 .productList {
@@ -86,6 +90,9 @@ header .nav-title {
   font-size: 2.2rem;
 }
 
+.product-short-detail-box {
+  margin-left: 2rem;
+}
 .product-long-description {
   font-size: 2.2rem;
 }
@@ -113,14 +120,43 @@ header .nav-title {
 
 .add-to-btn {
   font-size: 1.8rem;
+  background-color: #0f532e;
+  color: #fff;
+  transition: 0.5s ease;
+  border-radius: 25px;
+  border: 2px solid transparent;
+}
+
+.add-to-btn:hover {
+  background-color: #fff;
+  color: #0f532e;
+  border-color: #0f532e;
 }
 
 .my-cart-text {
   font-size: 3rem;
 }
 
+.checkout-cart {
+  transition: 0.5s ease;
+  border: 2px solid transparent;
+}
+
+.checkout-cart:hover {
+  border: 2px solid #fff;
+}
+
 .custom-catalog-width {
   width: 13%;
+}
+
+.back-to-catalog {
+  transition: 0.5s ease;
+  border: 2px solid #fff;
+}
+
+.back-to-catalog:hover {
+  border-color: #0f532e;
 }
 
 .no-items-text {
@@ -156,6 +192,7 @@ header .nav-title {
 @media screen and (min-width: 768px) {
   .my-card-img-top {
     height: 30rem;
+    margin-top: 2rem;
   }
 
   .productList {
@@ -165,5 +202,17 @@ header .nav-title {
   .product-image-row {
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  .productList {
+    margin-top: 8% !important;
   }
 }
