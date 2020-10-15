@@ -234,7 +234,6 @@ header .nav-title {
   .productList {
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
   }
   .product-image-row {
     flex-direction: row;
