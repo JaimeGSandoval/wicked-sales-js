@@ -4,6 +4,7 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
+import Modal from './modal';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       view: {
-        name: 'catalog',
+        name: 'initial-dom-load',
         params: {}
       },
       cart: []
@@ -92,7 +93,21 @@ export default class App extends React.Component {
   render() {
     let component = null;
 
-    if (this.state.view.name === 'catalog') {
+    if (this.state.view.name === 'initial-dom-load') {
+      component = <ProductList setView={this.setView} />;
+      return (
+        <>
+          <Modal currentViewName={this.state.view.name} setView={this.setView} />
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />
+          <div className="container col-sm-12 col-md-12 my-5">
+            <div className="row productList justify-content-center">
+              {component}
+            </div>
+          </div>
+        </>
+      );
+
+    } else if (this.state.view.name === 'catalog') {
       component = <ProductList setView={this.setView} />;
       return (
         <>
@@ -124,7 +139,7 @@ export default class App extends React.Component {
         <>
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <div className="container col-sm-12 col-md-12 my-5">
-            <div className="row productList justify-content-start ml-4">
+            <div className="row productList justify-content-start ">
               {component}
             </div>
           </div>
@@ -136,6 +151,7 @@ export default class App extends React.Component {
 
       return (
         <>
+          <Modal currentView={this.state.view.name} setView={this.setView} />
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <div className="container col-10 my-5">
             <div className="row">
