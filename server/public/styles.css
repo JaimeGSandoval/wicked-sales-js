@@ -218,6 +218,7 @@ header .nav-title {
   z-index: 3;
   position: relative;
   transition: 0.5s ease;
+  width: 20rem;
 }
 
 .order-btn:hover {
@@ -268,6 +269,15 @@ header .nav-title {
   background-color: #0f532e;
 }
 
+.order-form-top-margin {
+  margin: auto;
+}
+
+.continue-shopping-btn {
+  margin: auto;
+  justify-content: center;
+}
+
 .show {
   display: flex;
 }
@@ -277,6 +287,9 @@ header .nav-title {
 }
 
 @media screen and (min-width: 768px) {
+  .checkout-cart {
+    font-size: 2.1rem;
+  }
   .modal-content {
     width: 50%;
     height: 50%;
@@ -314,9 +327,9 @@ header .nav-title {
   .back-to-catalog {
     border-color: #fff;
     color: #fff;
-    margin-top: 3.5rem;
     margin-bottom: 3.7rem;
     width: 19rem;
+    margin-top: 2rem;
   }
 
   body {
@@ -335,7 +348,8 @@ header .nav-title {
 
   header .nav-title {
     letter-spacing: 1px;
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: 4.5rem;
   }
 
   .my-card-img-top {
@@ -375,7 +389,7 @@ header .nav-title {
   }
 
   .order-btn {
-    top: 3rem;
+    top: 0rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
     width: 22rem;
@@ -383,6 +397,21 @@ header .nav-title {
 
   .custom-catalog-width-checkout {
     width: 22rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (width: 768px) and (height: 1024px) and (orientation: portrait) {
+  .order-form-top-margin {
+    margin-top: 8.5rem;
+    color: #fff;
+  }
+  .back-to-catalog-details {
+    margin-top: 5rem;
+  }
+
+  .back-to-catalog-cart-summary {
+    margin-top: 7.5rem;
   }
 }
 
@@ -395,16 +424,16 @@ header .nav-title {
     margin-top: 8rem;
     color: #fff;
   }
+
+  .order-btn {
+    top: 2rem;
+  }
 }
 
 @media screen and (min-width: 1600px) {
   header .nav-title {
     letter-spacing: 1px;
     font-size: 4.5rem;
-  }
-
-  .cart-box {
-    font-size: 2.7rem;
   }
 
   .fa-shopping-cart {

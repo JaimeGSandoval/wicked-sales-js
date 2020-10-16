@@ -28,7 +28,7 @@ class ProductDetails extends React.Component {
     return (
       <>
         <div className="container col-lg-10">
-          <div className="back-to-catalog p-1 text-center align-items-start py-3 px-4" onClick={() => this.props.setView('catalog', {})}>Back to Catalog</div>
+          <div className="back-to-catalog back-to-catalog-details p-1 text-center align-items-start py-3 px-4" onClick={() => this.props.setView('catalog', {})}>Back to Catalog</div>
           <div className="row product-image-row bg-white">
             <div className="product-image-box col">
               <img className="product-image" src={this.state.product.image} alt="Image of product" />

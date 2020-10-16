@@ -45,7 +45,7 @@ function CartSummary(props) {
     < div className="container">
       <div className="row">
         <div className="col">
-          <div className="back-to-catalog py-3 px-4 mb-5 align-middle text-center" onClick={() => props.setView('catalog', {})}>
+          <div className="back-to-catalog back-to-catalog-cart-summary  py-3 px-4 align-middle text-center" onClick={() => props.setView('catalog', {})}>
             <i className="fas fa-chevron-left mr-2"></i>
             <a>Back to catalog</a>
           </div>

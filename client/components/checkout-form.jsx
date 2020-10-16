@@ -67,9 +67,9 @@ class CheckoutForm extends React.Component {
           </form>
 
         </div>
-        <div className="row col-12">
-          <div className="container d-flex justify-content-between">
-            <div onClick={() => this.props.setView('catalog', {})} className="back-to-catalog py-3 px-4 mb-5 align-middle text-center custom-catalog-width-checkout">
+        <div className="row col-12 continue-shopping-btn">
+          <div className="container m-auto d-flex justify-content-between">
+            <div onClick={() => this.props.setView('catalog', {})} className="back-to-catalog py-3 px-4 mb-5 text-center custom-catalog-width-checkout">
               <i className="fas fa-chevron-left mr-2"></i>
               <a>Continue Shopping</a>
             </div>
