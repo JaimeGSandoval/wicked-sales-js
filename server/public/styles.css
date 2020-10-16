@@ -344,7 +344,7 @@ header .nav-title {
   .back-to-catalog-details {
     color: #fff;
     border-color: #fff;
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 
   .back-to-catalog-details:hover {
@@ -563,6 +563,12 @@ header .nav-title {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .back-to-catalog-details {
+    margin-top: 0rem;
+  }
+}
+
 @media screen and (min-width: 1600px) {
   header .nav-title {
     letter-spacing: 1px;
@@ -583,6 +589,6 @@ header .nav-title {
 
 @media screen and (min-width: 1900px) {
   .back-to-catalog-details {
-    margin-top: -2rem;
+    margin-top: -5rem;
   }
 }
