@@ -59,9 +59,7 @@ function CartSummary(props) {
         <h2 className="col-6 pl-0 custom-margin-left-price">
           Total Price:
           <span className="ml-3">
-            <div>
-              <TotalPrice cart={props.cartItems} />
-            </div>
+            <TotalPrice cart={props.cartItems} />
           </span>
         </h2>
         <div className="col d-flex justify-content-end pr-0 align-items-center">

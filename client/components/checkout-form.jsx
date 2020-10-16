@@ -39,7 +39,7 @@ class CheckoutForm extends React.Component {
   render() {
     return (
       <>
-        <div className="row col-12">
+        <div className="row col-12  order-form-top-margin">
           <div className="row flex-column ml-4">
             <h1 className="mb-4">My Cart</h1>
             <h2 className="mb-4">

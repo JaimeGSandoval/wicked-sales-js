@@ -4,6 +4,7 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
+import Modal from './modal';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class App extends React.Component {
       message: null,
       isLoading: true,
       view: {
-        name: 'catalog',
+        name: 'initial-dom-load',
         params: {}
       },
       cart: []
@@ -21,7 +22,6 @@ export default class App extends React.Component {
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
-    this.userAlert = this.userAlert.bind(this);
   }
 
   componentDidMount() {
@@ -31,10 +31,6 @@ export default class App extends React.Component {
       .catch(err => this.setState({ message: err.message }))
       .finally(() => this.setState({ isLoading: false }));
     this.getCartItems();
-  }
-
-  userAlert() {
-    alert('Please do not enter personal information when filling out the form. Thank You.');
   }
 
   setView(name, params) {
@@ -97,7 +93,21 @@ export default class App extends React.Component {
   render() {
     let component = null;
 
-    if (this.state.view.name === 'catalog') {
+    if (this.state.view.name === 'initial-dom-load') {
+      component = <ProductList setView={this.setView} />;
+      return (
+        <>
+          <Modal currentViewName={this.state.view.name} setView={this.setView} />
+          <Header cartItemCount={this.state.cart.length} setView={this.setView} />
+          <div className="container col-sm-12 col-md-12 my-5">
+            <div className="row productList justify-content-center">
+              {component}
+            </div>
+          </div>
+        </>
+      );
+
+    } else if (this.state.view.name === 'catalog') {
       component = <ProductList setView={this.setView} />;
       return (
         <>
@@ -136,11 +146,12 @@ export default class App extends React.Component {
         </>
       );
     } else if (this.state.view.name === 'checkout') {
-      this.userAlert();
+
       component = <CheckoutForm setView={this.setView} cartItems={this.state.cart} placeOrder={this.placeOrder} />;
 
       return (
         <>
+          <Modal currentView={this.state.view.name} setView={this.setView} />
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <div className="container col-10 my-5">
             <div className="row">
