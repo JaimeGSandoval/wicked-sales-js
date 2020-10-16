@@ -26,6 +26,11 @@ header .nav-title {
   margin-bottom: 0;
   font-size: 2.5rem;
   margin-left: 1rem;
+  cursor: pointer;
+  border-bottom: 5px solid transparent;
+  transition: 0.5s ease;
+  position: relative;
+  top: 0.5rem;
 }
 
 .bonsai-icon {
@@ -51,6 +56,10 @@ header .nav-title {
 .my-card-text {
   font-size: 1.8rem;
   padding-bottom: 2rem;
+}
+
+.cart-summary-price-box {
+  align-items: center;
 }
 
 .price {
@@ -129,6 +138,7 @@ header .nav-title {
 
 .fa-shopping-cart {
   font-size: 2.5rem;
+  color: #fff;
 }
 
 .cart-box {
@@ -136,6 +146,9 @@ header .nav-title {
   cursor: pointer;
   position: relative;
   margin-left: 2%;
+  border-bottom: 3px solid transparent;
+  transition: 0.5s ease;
+  color: #fff;
 }
 
 .my-cart-text {
@@ -169,13 +182,48 @@ header .nav-title {
   border-color: #0f532e;
 }
 
-.back-to-catalog {
+.custom-catalog-width-checkout {
   transition: 0.5s ease;
   flex-direction: column;
   border: 2px solid #0f532e;
   font-size: 1.8rem;
   cursor: pointer;
   color: #0f532e;
+  margin: -1.5rem auto 3rem auto;
+  border-radius: 2.5rem;
+}
+
+.back-to-catalog-cart-summary {
+  transition: 0.5s ease;
+  flex-direction: column;
+  border: 2px solid #0f532e;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0f532e;
+  margin: -0.5rem auto 3rem auto;
+  border-radius: 2.5rem;
+  width: 20rem;
+}
+
+.back-to-catalog-details {
+  transition: 0.5s ease;
+  flex-direction: column;
+  border: 2px solid #0f532e;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0f532e;
+  margin: -1.5rem auto 3rem auto;
+  border-radius: 2.5rem;
+  width: 20rem;
+}
+
+.back-to-catalog {
+  transition: 0.5s ease;
+  flex-direction: column;
+  border: 2px solid #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
   margin: -1.5rem auto 3rem auto;
   border-radius: 2.5rem;
 }
@@ -286,7 +334,29 @@ header .nav-title {
   display: none;
 }
 
+.custom-catalog-width {
+  width: 20rem;
+  color: #0f532e;
+  border-color: #0f532e;
+}
+
 @media screen and (min-width: 768px) {
+  .back-to-catalog-details {
+    color: #fff;
+    border-color: #fff;
+    margin-top: 1rem;
+  }
+
+  .back-to-catalog-details:hover {
+    border-color: #0f532e;
+    background-color: #fff;
+    color: #0f532e;
+  }
+  .back-to-catalog-cart-summary {
+    border: 2px solid #fff;
+    color: #fff;
+  }
+
   .checkout-cart {
     font-size: 2.1rem;
   }
@@ -308,6 +378,8 @@ header .nav-title {
 
   .custom-catalog-width {
     width: 13%;
+    color: #fff;
+    border-color: #fff;
   }
 
   .no-items-text {
@@ -348,7 +420,6 @@ header .nav-title {
 
   header .nav-title {
     letter-spacing: 1px;
-    /* font-size: 2.5rem; */
     font-size: 4.5rem;
   }
 
@@ -398,16 +469,40 @@ header .nav-title {
   .custom-catalog-width-checkout {
     width: 22rem;
     margin-top: 1.5rem;
+    color: #fff;
+    border-color: #fff;
   }
 }
 
 @media only screen and (width: 768px) and (height: 1024px) and (orientation: portrait) {
+  .bonsai-icon {
+    position: relative;
+    top: 0.4rem;
+  }
+  .custom-catalog-width-checkout {
+    margin-top: -0.5rem;
+    color: #fff;
+    border-color: #fff;
+  }
+  .modal-content {
+    height: 35%;
+  }
   .order-form-top-margin {
     margin-top: 8.5rem;
     color: #fff;
   }
   .back-to-catalog-details {
     margin-top: 5rem;
+    color: #fff;
+    border-color: #fff;
+  }
+
+  .back-to-catalog {
+    margin-top: 7rem;
+  }
+
+  .no-items-text {
+    margin-top: 9% !important;
   }
 
   .back-to-catalog-cart-summary {
@@ -416,6 +511,44 @@ header .nav-title {
 }
 
 @media screen and (min-width: 992px) {
+  .back-to-catalog-cart-summary {
+    margin-top: 5.6rem;
+  }
+
+  .back-to-catalog-cart-summary:hover {
+    border-color: #0f532e;
+    background-color: #fff;
+    color: #0f532e;
+  }
+  .custom-catalog-width-checkout:hover {
+    background-color: #fff;
+    color: #0f532e;
+    border-color: #0f532e;
+  }
+
+  header .nav-title:hover {
+    border-bottom-color: #fff;
+  }
+
+  .cart-box {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 4rem;
+  }
+
+  .fa-shopping-cart:hover {
+    color: inherit;
+  }
+
+  .checkout-cart:hover {
+    color: #0f532e;
+  }
+
+  .cart-box:hover,
+  .cart-box:hover i {
+    background-color: #fff;
+    color: #0f532e;
+  }
   .custom-margin-left-price {
     font-size: 3rem;
   }
@@ -445,5 +578,11 @@ header .nav-title {
     max-width: 20%;
     margin-bottom: 4%;
     margin-top: 1%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .back-to-catalog-details {
+    margin-top: -2rem;
   }
 }
