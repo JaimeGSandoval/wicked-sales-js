@@ -298,6 +298,8 @@ header .nav-title {
   justify-content: center;
   padding: 0.8rem;
   text-align: center;
+  position: relative;
+  bottom: 10%;
 }
 
 .modal-btn {
