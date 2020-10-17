@@ -238,6 +238,54 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 108	182	4	999
 109	182	5	9900
 110	182	6	830
+111	182	3	2900
+112	184	2	2595
+113	184	4	999
+114	184	5	9900
+115	185	1	2999
+116	185	2	2595
+117	185	3	2900
+118	186	3	2900
+119	186	2	2595
+120	186	1	2999
+121	187	3	2900
+122	188	3	2900
+123	189	2	2595
+124	190	2	2595
+125	191	1	29995
+126	191	4	9495
+127	191	4	9495
+128	191	4	9495
+129	191	2	8500
+130	191	1	29995
+131	192	2	8500
+132	193	6	4995
+133	193	3	17995
+134	193	4	9495
+135	193	4	9495
+136	193	6	4995
+137	194	6	4995
+138	194	3	17995
+139	194	4	9495
+140	195	2	8500
+141	196	6	4995
+142	197	3	17995
+143	197	4	9495
+144	197	2	8500
+145	198	4	9495
+146	198	4	9495
+147	199	4	9495
+148	199	3	17995
+149	200	3	17995
+150	201	4	9495
+151	202	5	2995
+152	203	3	17995
+153	204	6	4995
+154	205	4	9495
+155	206	1	29995
+156	206	4	9495
+157	207	3	17995
+158	208	4	9495
 \.
 
 
@@ -266,6 +314,32 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 180	2020-10-01 18:42:22.810315-07
 181	2020-10-01 18:42:52.785438-07
 182	2020-10-12 13:36:09.345015-07
+183	2020-10-12 20:58:32.475658-07
+184	2020-10-12 21:15:15.148495-07
+185	2020-10-13 11:31:12.263696-07
+186	2020-10-13 13:37:15.522007-07
+187	2020-10-13 13:40:03.131413-07
+188	2020-10-13 13:41:45.980871-07
+189	2020-10-13 13:48:12.104312-07
+190	2020-10-13 14:03:44.304471-07
+191	2020-10-14 18:14:02.828822-07
+192	2020-10-15 10:46:27.005025-07
+193	2020-10-15 14:59:03.91372-07
+194	2020-10-15 23:47:18.902457-07
+195	2020-10-16 11:51:45.973046-07
+196	2020-10-16 12:31:28.615121-07
+197	2020-10-16 12:44:02.042892-07
+198	2020-10-16 12:48:17.950387-07
+199	2020-10-16 12:50:04.952171-07
+200	2020-10-16 13:33:29.356467-07
+201	2020-10-16 13:39:48.884373-07
+202	2020-10-16 13:48:46.659453-07
+203	2020-10-16 14:08:39.382916-07
+204	2020-10-16 14:12:41.504201-07
+205	2020-10-16 14:23:20.496155-07
+206	2020-10-16 15:09:47.53729-07
+207	2020-10-16 15:12:26.32144-07
+208	2020-10-16 15:14:09.141457-07
 \.
 
 
@@ -274,6 +348,32 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 --
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
+3	182	Jaime	123456789	1234 street ln	2020-10-12 20:48:38.816189-07
+5	184	Logan	12345	1234 Chill ln	2020-10-12 21:16:23.303381-07
+6	184	Clark	123456789	1234 Daily Planet ln	2020-10-12 21:20:25.785902-07
+7	184	Bruce	123456789	1234 Gotham City ln	2020-10-12 21:27:00.440209-07
+8	185	Uzumaki Naruto	123456789	1234 stree ln	2020-10-13 13:33:27.68008-07
+9	186	Uzumaki Naruto	123456789	12345 Konoha ln	2020-10-13 13:38:07.947379-07
+10	187	Uzumaki Naruto	123456789	1234 street ln	2020-10-13 13:40:31.002762-07
+11	188	Uzumaki Naruto	123456788990	12345 street	2020-10-13 13:42:08.642758-07
+12	189	Uchiha Sauke	123456788	98765 Konaoha ln	2020-10-13 13:58:53.4065-07
+13	191	batman	123456	123456 street ln rd	2020-10-14 22:17:42.264548-07
+14	192	jaime sandoval	123456	sleepy ln	2020-10-15 14:15:24.65919-07
+15	193	Ichigo Kurosake	74949789058	Bankai rd	2020-10-15 23:39:59.248147-07
+16	195	Peter Parker	123456789	1234 Daily Bugle ln	2020-10-16 11:56:22.555313-07
+17	196	jaime sandoval	123456788990	12345 tree ln	2020-10-16 12:40:36.71206-07
+18	197	jaime sandoval	123456	1234 Hollow ln	2020-10-16 12:44:56.316759-07
+19	198	Sasuke Uchiha	123456778	12345 Konoha ln	2020-10-16 12:49:20.753044-07
+20	199	test	test	test	2020-10-16 13:30:51.564189-07
+21	200	jaime sandoval	12345	12345 street pl	2020-10-16 13:39:28.142948-07
+22	201	Minato	456789876	33568 Konoha ln	2020-10-16 13:42:05.568029-07
+23	202	test2	test2	12345 test st	2020-10-16 14:08:20.41251-07
+24	203	test3	test3	1234 test3 st	2020-10-16 14:10:10.436647-07
+25	204	test4	test4	12345 test way	2020-10-16 14:19:36.460198-07
+26	205	mvp tes	mvp test	1234 mvp test st	2020-10-16 14:23:46.689439-07
+27	206	Test5	Test5	8978 Tester way	2020-10-16 15:10:23.124827-07
+28	207	mr james	1234	1234street	2020-10-16 15:13:58.380864-07
+29	208	Test 6	123466567	12334 testing ln	2020-10-16 15:15:07.960683-07
 \.
 
 
@@ -282,12 +382,12 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+3	Three Amigo's For A Small Balcony	17995	/images/3-amigos.webp	This is a One-Of-A-Kind Spruce, San Jose Juniper, and Shimpaku Great little Trio. All of these trees have a great foundation to work with.	Great little Trio. We'll try to create more of these in the future. All of these trees have a great foundation to work with. Although the San Jose (Middle tree) and Shimpaku (Tree on the Right) are in ceramic pots, you should consider all of these trees as pre-bonsai. They're in less than ideal soil and the pot may be to be upsized. All of these trees have a ton of potential. The Spruce is awesome!
+4	Tinyroots 5 Piece Carbon Steel Pruning Kit	9495	/images/5-piece-carbon.webp	This 5 Piece Pruning Kit from Tinyroots comes with the three most popular Bonsai tools from a top-quality manufacturer.	Tinyroots 5 Piece Carbon Steel Pruning Kit. This 5 Piece Pruning Kit from Tinyroots comes with the three most popular Bonsai tools from a top-quality manufacturer.Whether you're looking to get into Bonsai and need a great set of tools to get you started, considering upgrading your current set of tools or ready to give a gift that'll thrill any Bonsai enthusiast, then this is the kit for you.
+6	Tinyroots Shear, Broom & Rake Kit. Perfect Beginner Set or For a Gift.	4995	/images/broom.webp	Our Tinyroots brand Shear, Broom and Rake Kit includes everything need to keep your Bonsai tree styled, healthy and happy.	Our Tinyroots brand Shear, Broom and Rake Kit includes everything need to keep your Bonsai tree styled, healthy and happy.Old-world craftsmanship combined with modern technology results in the finest tools available with the aesthetic and feel of fine surgical instruments. Comes complete with a hand made bamboo storage box to provide your tools protection for a lifetime.
+1	15+ Year Old Pot Grown San Jose Juniper in Training Pot	29995	/images/san-jose-juniper.webp	This juniper is notable for its striking green foliage and beautiful bark. San Jose is a variety that is suitable for upright, cascade, semi-cascade styles.	This is a One-Of-A-Kind San Jose Juniper. This is a pot grown San Jose with a gnarly old trunk. You're not going to find anything like it. Look at the trunk on this tree. This juniper is notable for its striking green foliage and beautiful bark. San Jose is a variety that is suitable for upright, cascade, semi-cascade styles. It's wearing it's winter colors, and it's ready for styling. It's been growing in a pot for more than 15 Yrs. It's going to enjoy full sun. 
+5	Tinyroots "Anti-Intimidation" Bonsai Starter Kit is a great way to take your first steps	2995	/images/anti-intimidation.webp	Tinyroots "Anti-Intimidation" Bonsai Starter Kit is a great way to take your first steps towards becoming a Bonsai Master.	The Tinyroots Bonsai Starter Kit. If you're a Bonsai beginner, this "Anti-Intimidation" Starter Kit is a great way to take your first steps towards becoming a Bonsai Master. The Tinyroots Bonsai Starter Kit has everything you'll need to raise a happy, healthy Bonsai tree with 6 top-quality items from trusted manufacturers. It's the perfect complement for any Bonsai tree.
+2	Pot-Grown Itoigawa Juniper - Ready To Style Pre Bonsai	8500	/images/itoigawa-juniper.webp	This is a One Of A Kind Itoigawa Juniper - Pot Grown. They are NOT young cuttings. These Itoigawa Junipers (Juniperus chinensis Itoigawa) have been growing in pots for several years.	"Itoigawa" Juniper Bonsai, is one of the most sought after Juniper in Japan for their unique soft cloud like foliage. The trunks also lend themselves to natural shari. The Itoigawa is native to Japan, the Kurile Islands and the Itoigawa peninsula. Its natural habit is prostrate and it prefers rocky, well-drained soils. In its natural range, it is most often found growing near the sea. The foliage is needle-like on young trees and scale-like on older trees. The fruit is a small, hard, bluish berry.
 \.
 
 
@@ -295,28 +395,28 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 110, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 158, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 182, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 208, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 1, false);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 29, true);
 
 
 --
 -- Name: products_productId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."products_productId_seq"', 1, false);
+SELECT pg_catalog.setval('public."products_productId_seq"', 2, true);
 
 
 --
