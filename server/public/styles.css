@@ -24,17 +24,18 @@ button:focus {
 header .nav-title {
   font-family: "Rozha One", serif;
   margin-bottom: 0;
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin-left: 1rem;
   cursor: pointer;
   border-bottom: 5px solid transparent;
   transition: 0.5s ease;
   position: relative;
-  top: 0.5rem;
 }
 
 .bonsai-icon {
   border-radius: 50%;
+  position: relative;
+  bottom: 0.2rem;
 }
 
 .my-card {
@@ -75,6 +76,11 @@ header .nav-title {
 
 .my-card-title {
   color: #333;
+}
+
+.no-items-text {
+  margin: auto;
+  padding: 0 2.9rem;
 }
 
 .productList {
@@ -299,7 +305,7 @@ header .nav-title {
   padding: 0.8rem;
   text-align: center;
   position: relative;
-  bottom: 10%;
+  bottom: 13%;
 }
 
 .modal-btn {
@@ -343,12 +349,20 @@ header .nav-title {
 }
 
 @media screen and (min-width: 768px) {
+  .bonsai-icon {
+    position: relative;
+    bottom: 0.3rem;
+  }
+
   .back-to-catalog-details {
     color: #fff;
     border-color: #fff;
     margin-top: 3rem;
   }
 
+  header .nav-title {
+    top: 0;
+  }
   .back-to-catalog-details:hover {
     border-color: #0f532e;
     background-color: #fff;
@@ -389,6 +403,10 @@ header .nav-title {
     color: #fff;
   }
 
+  .no-items-text-box {
+    margin-top: 10%;
+  }
+
   .product-detail-title {
     margin-bottom: 6%;
     font-size: 3.5rem;
@@ -403,6 +421,8 @@ header .nav-title {
     color: #fff;
     margin-bottom: 3.7rem;
     width: 19rem;
+    width: 31rem;
+    font-size: 3rem;
     margin-top: 2rem;
   }
 
@@ -479,8 +499,9 @@ header .nav-title {
 @media only screen and (width: 768px) and (height: 1024px) and (orientation: portrait) {
   .bonsai-icon {
     position: relative;
-    top: 0.4rem;
+    top: -0.3rem;
   }
+
   .custom-catalog-width-checkout {
     margin-top: -0.5rem;
     color: #fff;
@@ -504,7 +525,8 @@ header .nav-title {
   }
 
   .no-items-text {
-    margin-top: 9% !important;
+    margin-top: 9%;
+    padding: 0;
   }
 
   .back-to-catalog-cart-summary {
@@ -569,9 +591,16 @@ header .nav-title {
   .back-to-catalog-details {
     margin-top: 0rem;
   }
+
+  .back-to-catalog {
+    margin-top: 6%;
+  }
 }
 
 @media screen and (min-width: 1600px) {
+  .back-to-catalog {
+    margin-top: 3%;
+  }
   header .nav-title {
     letter-spacing: 1px;
     font-size: 4.5rem;
@@ -582,10 +611,8 @@ header .nav-title {
   }
 
   .back-to-catalog {
-    flex: 0 0 20%;
-    max-width: 20%;
-    margin-bottom: 4%;
-    margin-top: 1%;
+    font-size: 3rem;
+    width: 31rem;
   }
 }
 
