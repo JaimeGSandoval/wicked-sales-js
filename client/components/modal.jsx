@@ -20,7 +20,7 @@ class Modal extends React.Component {
   componentDidMount() {
     const modalMessage = '';
     if (this.props.currentView === 'checkout') {
-      this.messageToUser = 'Important Notice: Please Do Not Enter Any Personal Information When Filling Out The Form. It Is For Demonstration Purposes Only.';
+      this.messageToUser = 'Important Notice: Please Do Not Enter Any Personal Information When Filling Out This Form. It Is For Demonstration Purposes Only.';
     } else {
       this.messageToUser = 'Important Notice: This Site Is For Demonstration Purposes Only. None Of The Products Here Are Available For Purchase.';
     }

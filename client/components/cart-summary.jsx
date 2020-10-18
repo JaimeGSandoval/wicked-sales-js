@@ -15,14 +15,14 @@ function CartSummary(props) {
   if (props.cartItems.length === 0) {
     return (
       <>
-        <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center custom-catalog-width" onClick={() => props.setView('catalog', {})}>
-          <i className="fas fa-chevron-left mr-2"></i>
-          <a>Back to catalog</a>
-        </div>
-        <div className=" text-center">
+        <div className="text-center mx-auto no-items-text-box">
+          <div className="back-to-catalog p-1 pb-2 mb-5 align-middle text-center custom-catalog-width" onClick={() => props.setView('catalog', {})}>
+            <i className="fas fa-chevron-left mr-2"></i>
+            <a>Back to catalog</a>
+          </div>
 
+          <h1 className="position-relative no-items-text" >No items have been added to the cart.</h1 >;
         </div>
-        <h1 className="mt-4 m-auto position-relative no-items-text px-2" >No items have been added to the cart.</h1 >;
 
       </>
     );
