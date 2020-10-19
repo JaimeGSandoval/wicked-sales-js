@@ -1,2 +1,52 @@
-# wicked-sales-js
-A full stack Node.js and React shopping cart app.
+# bonsai-depot
+A full stack mobile responsive Node.js and React shopping cart app focused on bonsai trees and tools.
+
+## Technologies Used
+- React.js
+- JavaScript ES6
+- Node.js
+- Express.js
+- PostgreSQL
+- SQL
+- CSS3
+- Bootstrap 4
+- HTML5
+- Webpack
+- Babel
+- npm
+
+## Live Demo
+Try the application live at [https://bonsaidepot.jaimesandoval.net/]
+
+## Features
+- User can view bonsai trees and tools for sale
+- User can read details of each product
+- User can add products to their cart
+- User can view their cart summary
+- User can fill out a form to purchase products
+
+## Strecth Features
+- User can delete items from their cart
+- User can delete all items from their cart at once
+
+## Mobile Preview 
+![wicked-sales-js](/server/public/images/bonsai-mobile.gif)
+
+## Desktop Preview
+![wicked-sales-js](/server/public/images/bonsai-desktop.gif)
+
+## Getting Started
+1. Clone the repository.
+```
+git clone https://github.com/JaimeGSandoval/wicked-sales-js
+cd wicked-sales-js
+```
+2. Install all dependencies with NPM.
+```
+npm install
+```
+3. Start the Project. Once started you can view the application by opening [http://localhost:3000] in your browser.
+```
+npm run dev
+```
+
