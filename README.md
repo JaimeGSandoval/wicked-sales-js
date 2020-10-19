@@ -16,7 +16,7 @@ A full stack mobile responsive Node.js and React shopping cart app focused on bo
 - npm
 
 ## Live Demo
-Try the application live at [https://bonsaidepot.jaimesandoval.net/]
+Try the application live at https://bonsaidepot.jaimesandoval.net/
 
 ## Features
 - User can view bonsai trees and tools for sale
@@ -37,7 +37,7 @@ Try the application live at [https://bonsaidepot.jaimesandoval.net/]
 
 ## Getting Started
 1. Clone the repository.
-```
+```shell
 git clone https://github.com/JaimeGSandoval/wicked-sales-js
 cd wicked-sales-js
 ```
@@ -45,7 +45,7 @@ cd wicked-sales-js
 ```
 npm install
 ```
-3. Start the Project. Once started you can view the application by opening [http://localhost:3000] in your browser.
+3. Start the Project. Once started you can view the application by opening http://localhost:3000 in your browser.
 ```
 npm run dev
 ```
