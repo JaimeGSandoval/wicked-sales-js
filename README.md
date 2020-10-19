@@ -1,5 +1,5 @@
 # bonsai-depot
-A full stack mobile responsive React and Node.js shopping cart application focused on bonsai trees and tools.
+A full stack mobile responsive React.js and Node.js shopping cart application focused on bonsai trees and tools.
 
 ## Technologies Used
 - React.js
