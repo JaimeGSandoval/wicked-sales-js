@@ -11,6 +11,7 @@ A full stack mobile responsive React.js and Node.js shopping cart application fo
 - CSS3
 - Bootstrap 4
 - HTML5
+- AWS EC2
 - Webpack
 - Babel
 - npm
