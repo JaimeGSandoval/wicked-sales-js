@@ -25,6 +25,7 @@ Try the application live at https://bonsaidepot.jaimesandoval.net/
 - User can add products to their cart
 - User can view their cart summary
 - User can fill out a form to purchase products
+- User can navigate to product catalog from any page
 
 ## Strecth Features
 - User can delete items from their cart
