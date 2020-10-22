@@ -47,7 +47,12 @@ cd wicked-sales-js
 ```
 npm install
 ```
-3. Start the Project. Once started you can view the application by opening http://localhost:3000 in your browser.
+3. Create a .env file in the root directory and set the ports
+```
+PORT=3001
+DEV_SERVER_PORT=3000
+```
+4. Start the Project. Once started you can view the application by opening http://localhost:3000 in your browser.
 ```
 npm run dev
 ```
