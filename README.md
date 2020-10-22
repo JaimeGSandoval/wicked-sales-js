@@ -53,7 +53,11 @@ PORT=3001
 DEV_SERVER_PORT=3000
 SESSION_SECRET=secret
 ```
-4. Start the Project. Once started you can view the application by opening http://localhost:3000 in your browser.
+4. While in the root directory, import the example database
+```
+npm run db:import
+```
+5. Start the Project. Once started you can view the application by opening http://localhost:3000 in your browser.
 ```
 npm run dev
 ```
