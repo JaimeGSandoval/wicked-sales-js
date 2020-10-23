@@ -38,6 +38,11 @@ Try the application live at https://bonsaidepot.jaimesandoval.net/
 ![wicked-sales-js](/server/public/images/bonsai-desktop.gif)
 
 ## Getting Started
+
+### System Requirements
+- npm 6 or higher
+- PostgreSQL 10 or higher
+
 1. Clone the repository.
 ```shell
 git clone https://github.com/JaimeGSandoval/wicked-sales-js
@@ -47,12 +52,10 @@ cd wicked-sales-js
 ```
 npm install
 ```
-3. Create a .env file in the root directory and set the ports and session.
-```
-PORT=3001
-DEV_SERVER_PORT=3000
-SESSION_SECRET=secret
-```
+3. Create Environment Variables
+- Copy the ```.env.example``` file
+- Name the copied file to `.env`
+- Change the `.env` to your own credentials
 4. While in the root directory, import the example database
 ```
 npm run db:import
