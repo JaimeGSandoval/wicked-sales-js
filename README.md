@@ -48,7 +48,7 @@ Try the application live at https://bonsaidepot.jaimesandoval.net/
 git clone https://github.com/JaimeGSandoval/wicked-sales-js
 cd wicked-sales-js
 ```
-2. Install all dependencies with NPM.
+2. Install all dependencies with npm.
 ```
 npm install
 ```
