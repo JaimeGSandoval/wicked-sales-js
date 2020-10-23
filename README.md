@@ -56,6 +56,7 @@ npm install
 - Copy the ```.env.example``` file
 - Name the copied file to `.env`
 - Change the `.env` to your own credentials
+
 4. While in the root directory, import the example database
 ```
 npm run db:import
